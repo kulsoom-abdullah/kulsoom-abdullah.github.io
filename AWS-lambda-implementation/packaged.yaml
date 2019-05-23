@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'AWS SAM template  - deploys 3 lambda functions
+
+  '
+Globals:
+  Function:
+    Timeout: 450
+    CodeUri: .
+    Runtime: python3.6
+Resources:
+  SrcBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: s3-bucket-for-lambda-function-deployment-1976
+  QueueCuisineURLs:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/queue_cuisine_URLs.lambda_handler
+      CodeUri: s3://s3-bucket-for-lambda-function-code-deloyments-1232-098/f708f13bf825b8ec4f5aed844d2796f8
+    Policies:
+    - AWSLambdaExecute
+    - Version: '2012-10-17'
+      Statement:
+      - Effect: Allow
+        Action:
+        - sqs:*
+        Resource: '*'
+  ScrapeHTMLPages:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/scrape_html_links.lambda_handler
+      CodeUri: s3://s3-bucket-for-lambda-function-code-deloyments-1232-098/f708f13bf825b8ec4f5aed844d2796f8
+    Policies:
+    - AWSLambdaExecute
+    - Version: '2012-10-17'
+      Statement:
+      - Effect: Allow
+        Action:
+        - s3:*
+        Resource: '*'
+  GetContentFromS3:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/parse_direct_URLs.lambda_handler
+      CodeUri: s3://s3-bucket-for-lambda-function-code-deloyments-1232-098/f708f13bf825b8ec4f5aed844d2796f8
+    Policies:
+    - AWSLambdaExecute
+    - Version: '2012-10-17'
+      Statement:
+      - Effect: Allow
+        Action:
+        - s3:*
+        Resource: '*'

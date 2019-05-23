@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: > 
+  AWS SAM template  - deploys 3 lambda functions
+
+Globals:
+  Function:
+    Timeout: 450
+    CodeUri: "."
+    Runtime: python3.6
+
+Resources:
+
+  SrcBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName : s3-bucket-for-lambda-function-deployment-1976 # Actual name of bucket being created in AWS account.
+
+  QueueCuisineURLs:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/queue_cuisine_URLs.lambda_handler
+    Policies:
+     - AWSLambdaExecute # Managed Policy
+     - Version: '2012-10-17' # Policy Document
+       Statement:
+         - Effect: "Allow"
+           Action:
+             -  "sqs:*"
+           Resource: '*'
+
+  ScrapeHTMLPages:
+    Type: AWS::Serverless::Function 
+    Properties:
+      Handler: src/scrape_html_links.lambda_handler
+    Policies:
+     - AWSLambdaExecute # Managed Policy
+     - Version: '2012-10-17' # Policy Document
+       Statement:
+         - Effect: "Allow"
+           Action:
+             - "s3:*"
+           Resource: '*'
+
+  GetContentFromS3:
+    Type: AWS::Serverless::Function 
+    Properties:
+      Handler: src/parse_direct_URLs.lambda_handler
+    Policies:
+     - AWSLambdaExecute # Managed Policy
+     - Version: '2012-10-17' # Policy Document
+       Statement:
+         - Effect: "Allow"
+           Action:
+             - "s3:*"
+           Resource: '*'
+
+
