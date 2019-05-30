@@ -1,12 +1,13 @@
 # Cuisine classification of recipes, using AWS Lambda functions
 
 
-My blog post about this project is [published on Towards Data Science]([I'm an inline-style link with title](https://towardsdatascience.com/https-towardsdatascience-com-end-to-end-recipe-cuisine-classification-e97f4ac22104 "Recipe Cuisine Classifier Blog post")
+My blog post about this project is [published on Towards Data Science](https://towardsdatascience.com/https-towardsdatascience-com-end-to-end-recipe-cuisine-classification-e97f4ac22104 "Recipe Cuisine Classifier Blog post")
 
 ### AWS Related Files
 
-template.yaml - contains the settings to deploy the AWS lambda functions
-/src - has the python code for the AWS lambda functions
+- template.yaml - contains the settings to deploy the AWS lambda functions
+
+- /src - has the python code for the AWS lambda functions
 
 ![AWS Architecture Diagram](aws_arch.png)
 
