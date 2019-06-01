@@ -3,12 +3,14 @@
 If the HTML is not rendering, click on the following to see the -
 
 Binary classification notebook
-https://htmlpreview.github.io/?https://github.com/kulsoom-abdullah/kulsoom-abdullah.github.io/blob/master/AWS-lambda-implementation/model_implementation/recipe%20binary%20classification/recipe%20binary%20classification.html
+https://htmlpreview.github.io/?https://github.com/kulsoom-abdullah/kulsoom-abdullah.github.io/blob/master/AWS-lambda-implementation/model_implementation/recipe_binary_classification/recipe%20binary%20classification.html
 
 Multi-classification notebook
-https://htmlpreview.github.io/?https://github.com/kulsoom-abdullah/kulsoom-abdullah.github.io/blob/master/AWS-lambda-implementation/model_implementation/recipe%20multiclass%20classification/recipe%20multiclass%20classification.html
+https://htmlpreview.github.io/?https://github.com/kulsoom-abdullah/kulsoom-abdullah.github.io/blob/master/AWS-lambda-implementation/model_implementation/recipe_multiclass_classification/recipe%20multiclass%20classification.html
 
-             
+My blog post about this project is [published on Towards Data Science](https://towardsdatascience.com/https-towardsdatascience-com-end-to-end-recipe-cuisine-classification-e97f4ac22104 "Recipe Cuisine Classifier Blog post")
+
+
 <table>
 <tbody>
   <tr>
