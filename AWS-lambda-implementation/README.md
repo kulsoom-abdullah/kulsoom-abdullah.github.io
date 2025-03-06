@@ -1,7 +1,7 @@
 # Cuisine classification of recipes, using AWS Lambda functions
 
 
-My blog post about this project is [published on Towards Data Science](https://towardsdatascience.com/https-towardsdatascience-com-end-to-end-recipe-cuisine-classification-e97f4ac22104 "Recipe Cuisine Classifier Blog post")
+My blog post about this project is [published on Towards Data Science](https://medium.com/towards-data-science/https-towardsdatascience-com-end-to-end-recipe-cuisine-classification-e97f4ac22104) and [archived in this repo](medium.md).
 
 ### AWS Related Files
 
